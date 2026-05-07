@@ -1,0 +1,10 @@
+SELECT items.barcode, items.itemcallnumber, items.location, biblio.title, biblio.author, items.issues, items.datelastborrowed, items.dateaccessioned
+FROM items
+LEFT JOIN biblio on (items.biblionumber=biblio.biblionumber) left join (SELECT itemnumber, count(datetime) as localuse from statistics where type='localuse' group by itemnumber) lu using (itemnumber)
+WHERE items.holdingbranch= <<Bibliotek|branches>> 
+AND items.ccode= <<Avdelning|CCODE>> 
+AND IFNULL(items.location,'') LIKE <<Placering|LOC:all>> 
+AND items.itemcallnumber BETWEEN <<Från hyllsignum>> AND <<t.o.m. hyllsignum>> 
+AND (items.datelastborrowed <= <<Senast utlånad (yyyy-mm-dd)|date>> OR items.datelastborrowed IS NULL)
+AND (items.dateaccessioned <= <<Senast utlånad (yyyy-mm-dd)|date>>)
+ORDER BY biblio.author ASC
