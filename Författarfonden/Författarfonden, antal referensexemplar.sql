@@ -26,6 +26,6 @@ LEFT JOIN biblioitems ON (biblioitems.biblionumber=items.biblionumber)
 LEFT JOIN itemtypes ON (biblioitems.itemtype=itemtypes.itemtype)
 LEFT JOIN biblio_metadata ON (biblio_metadata.biblionumber=biblio.biblionumber)
 
-WHERE items.notforloan = 1 
+WHERE items.notforloan = <<Ange det 'not for loan'-värde som motsvarar Referens>>
 GROUP BY items.biblionumber
 ORDER BY Författare,Titel, Delbeteckning, Deltitel
