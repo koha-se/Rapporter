@@ -1,0 +1,1 @@
+CONCAT('<a href=\"https://libris.kb.se/bib/', SUBSTRING(ExtractValue( bm.metadata, '//datafield[@tag=035]/subfield[@code="a" and contains(text(), "LIBRIS")]'), 9,99), '\" target="_blank">', ExtractValue( bm.metadata, '//datafield[@tag=035]/subfield[@code="a" and contains(text(), "LIBRIS")]'), '</a>' )
