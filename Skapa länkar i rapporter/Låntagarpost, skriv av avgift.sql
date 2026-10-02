@@ -1,0 +1,1 @@
+CONCAT('<a href=\"/cgi-bin/koha/members/paycollect.pl?borrowernumber=', accountlines.borrowernumber, '&writeoff_individual=1&accounttype=',accountlines.accounttype, '&amount=',accountlines.amount, '&amountoutstanding=',accountlines.amountoutstanding, '&accountlines_id=',accountlines.accountlines_id,'\" target="_blank">', FLOOR(accountlines.amountoutstanding), '</a>' )
