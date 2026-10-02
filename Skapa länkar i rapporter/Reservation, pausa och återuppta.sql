@@ -1,0 +1,1 @@
+CONCAT('<a href=\"/cgi-bin/koha/reserve/request.pl?action=toggleSuspend&reserve_id=', reserve_id, '&borrowernumber=', reserves.borrowernumber, '&biblionumber=', reserves.biblionumber, '\" target="_blank">', reserves.borrowernumber, '</a>' )
