@@ -1,0 +1,1 @@
+CONCAT('<a href=\"/cgi-bin/koha/catalogue/search.pl?type=intranet&op=do_search&idx=an,phr&q=',ExtractValue(biblio_metadata.metadata, '//datafield[@tag="100"]/subfield[@code="9"]'),'\" target="_blank">', biblio.author, '</a>' )
